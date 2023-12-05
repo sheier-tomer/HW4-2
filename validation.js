@@ -1,5 +1,31 @@
 // table.js
 $(document).ready(function () {
+
+    
+    var tabCounter = 0;
+
+    function addTab(label, content) {
+        // Increment the tab counter for unique tab IDs
+        tabCounter++;
+
+        // Create a new tab with a close button
+        var tabTemplate = "<li><a href='#{id}'>#{label}</a><span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>";
+        var tabId = "tabs-" + tabCounter;
+        var li = $(tabTemplate.replace(/#\{id\}/g, tabId).replace(/#\{label\}/g, label));
+
+        // Append the new tab to the tab list
+        $("#tabs ul").append(li);
+
+        // Append the table content to the tab container
+        $("#tabs").append("<div id='" + tabId + "'>" + content + "</div>");
+
+        // Refresh the tabs widget to update the UI
+        $("#tabs").tabs("refresh");
+
+        // Select the newly created tab
+        $("#tabs").tabs("option", "active", -1);
+    }
+
     // Initialize sliders
     $("#minColSlider, #maxColSlider, #minRowSlider, #maxRowSlider").slider({
         min: -50,
@@ -7,7 +33,6 @@ $(document).ready(function () {
         slide: function (event, ui) {
             // Update corresponding input field value dynamically
             $(this).siblings("input").val(ui.value);
-            createTable(); // Update table dynamically
         }
     });
 
@@ -77,7 +102,10 @@ $(document).ready(function () {
     });
 
     // Create tabs
-    $("#tabs").tabs();
+    $("#tabs").tabs({
+        activate: function (event, ui) {
+        }
+    });
 
     // Attach click event to the button
     $("#createTableBtn").click(function () {
@@ -85,7 +113,26 @@ $(document).ready(function () {
         if ($("form").valid()) {
             // Submit the form to trigger validation
             $("form").submit();
+
+            // Get values for tab label
+            var minCol = $("#minCol").val();
+            var maxCol = $("#maxCol").val();
+            var minRow = $("#minRow").val();
+            var maxRow = $("#maxRow").val();
+
+            // Create content for the new tab
+            var tableContent = $("#table-container").html();
+
+            // Add a new tab with the label and content
+            addTab("Table: " + minCol + "-" + maxCol + ", " + minRow + "-" + maxRow, tableContent);
         }
+    });
+
+    // Close icon: removing the tab on click
+    $("#tabs").on("click", "span.ui-icon-close", function () {
+        var panelId = $(this).closest("li").remove().attr("aria-controls");
+        $("#" + panelId).remove();
+        $("#tabs").tabs("refresh");
     });
 
     // Update table dynamically when text input values change
@@ -93,4 +140,5 @@ $(document).ready(function () {
         createTable();
     });
 });
+
 

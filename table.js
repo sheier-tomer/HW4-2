@@ -1,5 +1,5 @@
 // Tomer Sheier
-// 	11/14/2023
+// 	12/5/2023
 // 	This assignment about creating a multiplication table using JavaScript. this file contains the JavaScript code for
 // 	the multiplication table.
 
@@ -22,12 +22,10 @@ function createTable() {
 
     if (Math.abs(minRow) > maxAllowedRange || Math.abs(maxRow) > maxAllowedRange ||
         Math.abs(minCol) > maxAllowedRange || Math.abs(maxCol) > maxAllowedRange) {
-        //alert('Please enter values within the allowed range (-100 to 100).');
         return;
     }
 
     if (minRow > maxRow || minCol > maxCol) {
-        //alert('Invalid range. Minimum values should be less than or equal to maximum values.');
         return;
     }
 
