@@ -1,0 +1,81 @@
+<!--
+	Tomer Sheier
+	11/14/2023
+	This assignment about creating a multiplication table using JavaScript. this file is the main file that contains 
+    the html code.
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW4</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- Latest version of jQuery Validation Plugin from the CDN -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/latest/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/latest/additional-methods.min.js"></script>
+
+    <script src="table.js"></script>
+    <script src="validation.js"></script>
+</head>
+
+<body>
+    <div class="formContainer">
+        <div class="formCol">
+            <h3>Please enter the table ranges</h3>
+            <div class="minColVal">
+                <form>
+                    <label for="minCol">Minimum Column Value</label><br>
+                    <input type="number" id="minCol" name="minCol" min="-50" max="50"><br>
+                    <div class="slider-container">
+                        <label for="minColSlider">Minimum Column Slider:</label>
+                        <div id="minColSlider"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="maxColVal">
+                <form>
+                    <label for="maxCol">Maximum Column Value</label><br>
+                    <input type="number" id="maxCol" name="maxCol" min="-50" max="50"><br>
+                    <div class="slider-container">
+                        <label for="maxColSlider">Minimum Column Slider:</label>
+                        <div id="maxColSlider"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="minRowVal">
+                <form>
+                    <label for="minRow">Minimum Row Value</label><br>
+                    <input type="number" id="minRow" name="minRow" min="-50" max="50"><br>
+                    <div class="slider-container">
+                        <label for="minRowSlider">Minimum Column Slider:</label>
+                        <div id="minRowSlider"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="maxRowVal">
+                <form>
+                    <label for="maxRow">Maximum Row Value</label><br>
+                    <input type="number" id="maxRow" name="maxRow" min="-50" max="50"><br>
+                    <div class="slider-container">
+                        <label for="maxRowSlider">Minimum Column Slider:</label>
+                        <div id="maxRowSlider"></div>
+                    </div>
+                </form>
+            </div>
+            <button type="button" id="createTableBtn">Create Multiplication Table</button>
+        </div>
+
+        <div id="table-container"></div>
+    </div>
+    <div id="tabs">
+        <ul></ul>
+    </div>
+</body>
+
+</html>

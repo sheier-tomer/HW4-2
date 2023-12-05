@@ -1,0 +1,74 @@
+/*  Tomer Sheier
+	11/14/2023
+	This assignment about creating a multiplication table using JavaScript. this file is the css file for the html file.
+*/
+
+
+body {
+    margin: 0;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.formCol {
+    margin: 0;
+    justify-content: center;
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px 20px;
+    outline: 2px solid black;
+}
+
+#table-container {
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+    max-height: 500px;
+    max-width: 500px;
+    border: 2px solid black;
+    overflow-y: auto;
+    margin: 10px 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr:first-child {
+    background-color: black;
+    color: white;
+}
+
+table td:first-child {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+/* Apply specifically to WebKit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.slider-container {
+    margin-bottom: 10px;
+}
+
+#tabs {
+    margin-top: 20px;
+}
