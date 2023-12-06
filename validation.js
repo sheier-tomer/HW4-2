@@ -1,4 +1,9 @@
-// table.js
+// Tomer Sheier
+// 	12/5/2023
+// 	This assignment about creating a multiplication table using JavaScript. this file contains the Jquery code for the project. 
+//  unfortunately I couldn't make some parts of it to work. The slider does not change the value of the input field 
+//  and the tab is not how I would like it to be. 
+
 $(document).ready(function () {
 
     
@@ -41,7 +46,7 @@ $(document).ready(function () {
         var inputValue = $(this).val();
         var sliderId = $(this).siblings(".slider-container").find("div").attr("id");
         $("#" + sliderId).slider("value", inputValue);
-        createTable(); // Update table dynamically
+        createTable(); 
     });
 
     $("form").validate({
@@ -90,14 +95,14 @@ $(document).ready(function () {
             }
         },
         errorPlacement: function (error, element) {
-            // Customize the placement of error messages
+            
             error.insertAfter(element);
         },
         submitHandler: function (form) {
             // Validation passed, call createTable function
             console.log("Form is valid. Calling createTable...");
             createTable();
-            return false; // Prevent form submission
+            return false; 
         }
     });
 
@@ -128,7 +133,7 @@ $(document).ready(function () {
         }
     });
 
-    // Close icon: removing the tab on click
+    //removing the tab on click
     $("#tabs").on("click", "span.ui-icon-close", function () {
         var panelId = $(this).closest("li").remove().attr("aria-controls");
         $("#" + panelId).remove();
