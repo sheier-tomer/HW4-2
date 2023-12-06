@@ -2,7 +2,7 @@
 // 	12/5/2023
 // 	This assignment about creating a multiplication table using JavaScript. this file contains the Jquery code for the project. 
 //  unfortunately I couldn't make some parts of it to work. The slider does not change the value of the input field 
-//  and the tab is not how I would like it to be. 
+//  and the tab is not how I would like it to be. However, the table is created dynamically and the validation works.
 
 $(document).ready(function () {
 
